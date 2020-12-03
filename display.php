@@ -315,7 +315,7 @@ if (array_key_exists ( 'flares' , $decodechar)){
 }
 
 if ($hasflares2){
-	$flares =  (decodechar['flares'];
+	$flares =  decodechar['flares'];
 	
 	$storm  = $flares['storm'];
 	$shield  = $flares['shield'];  
@@ -638,7 +638,7 @@ if (array_key_exists ( 'memories' , $decodechar)){
 }
 
 if ($hasmemories){
-	$memories =  (decodechar['roles'];
+	$memories =  decodechar['roles'];
 	
 	$monster  = $memories['monster'];
 	$traitor  = $memories['traitor'];  
@@ -667,7 +667,7 @@ if (array_key_exists ( 'futureSelfInfo' , $decodechar)){
 }
 
 if ($hasfuturelife){
-	$selfinfo =  (decodechar['futureSelfInfo'];
+	$selfinfo =  decodechar['futureSelfInfo'];
 
 	$lost  = $selfinfo['lost'];
 	$failed  = $selfinfo['failed'];  
