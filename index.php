@@ -10,7 +10,7 @@ session_start();
 
 
 $provider = new \Wohali\OAuth2\Client\Provider\Discord([
-    'clientId' => '', //Fill in these with the keys from discord
+    'clientId' => '',
     'clientSecret' => '',
     'redirectUri' => ''
 ]);
@@ -28,7 +28,7 @@ $provider = new \Wohali\OAuth2\Client\Provider\Discord([
     // Get authorization code
 	$options = [
     'state' => 'OPTIONAL_CUSTOM_CONFIGURED_STATE',
-    'scope' => ['identify', 'email', 'guilds'] // array or string
+    'scope' => ['identify', 'guilds'] // array or string
 ];
 
 	$authUrl = $provider->getAuthorizationUrl($options);
