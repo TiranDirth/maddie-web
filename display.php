@@ -25,7 +25,7 @@ $cname = $decodechar['characterName'];
 $cplaybook = $decodechar['playbook'];
 
 // Build the form, that is to say, the character sheet
-echo "<p>Building a form for " . $cname . " the " . $cplaybook . "</p>";
+echo "<h1>Showing a sheet for " . $cname . " otherwise known as REALNAMEGOESHERE, the " . $cplaybook . "!</h1>";
 
 // Get our playbook section for mot etc.
 	$selectedPlaybook = null;
@@ -1000,6 +1000,32 @@ echo "
 	<label for=\"chemistry\">They require chemistry with your allies</label><br>";	
 	
 }
+
+// Additional story boxes and such go here, this is all dummy text
+
+echo "<h1>Additional background details, not yet implimented and stored</h1>
+	<h2>When your team came together...</h2>
+	<div class=\"pleft\">Team joining question goes here...</div>
+	<textarea name=\"cametogether\" rows=\"3\" cols=\"50\">" . $selectedPlaybook['mot'] . "</textarea><br>";
+	
+echo "<h2>Additional questions about your character</h2>
+	<div class=\"pleft\">Question 1 goes here...</div>
+	<textarea name=\"charaq1\" rows=\"3\" cols=\"50\">" . $selectedPlaybook['weakness'] . "</textarea><br>";
+echo "<div class=\"pleft\">Question 2 goes here...</div>
+	<textarea name=\"charaq2\" rows=\"3\" cols=\"50\">" . $selectedPlaybook['weakness'] . "</textarea><br>";
+echo "<div class=\"pleft\">Question 3 goes here...</div>
+	<textarea name=\"charaq3\" rows=\"3\" cols=\"50\">" . $selectedPlaybook['weakness'] . "</textarea><br>";
+echo "<div class=\"pleft\">Question 4 goes here...</div>
+	<textarea name=\"charaq4\" rows=\"3\" cols=\"50\">" . $selectedPlaybook['weakness'] . "</textarea><br>";
+echo "<div class=\"pleft\">Question 5 goes here...</div>
+	<textarea name=\"charaq5\" rows=\"3\" cols=\"50\">" . $selectedPlaybook['weakness'] . "</textarea><br>";
+
+// Appearance and powers
+echo "<h2>Additional background information</h2>
+	<div class=\"pleft\">Appearance</div>
+	<textarea name=\"charappearance\" rows=\"3\" cols=\"50\">" . "ambiguous, man, shifting, transgressing, woman; Asian or South Asian, Black, Hispanic/Latino, Indigenous, Middle Eastern, White; fashionable clothing, casual clothing, formal clothing, dark clothing " . "</textarea><br>
+	<div class=\"pleft\">Abilities</div>
+	<textarea name=\"charabilities\" rows=\"3\" cols=\"50\">" . "Information on your powers goes here, it may be drawn from your playbook or made up." . "</textarea><br>";
 
 echo "</form>";
 echo "<a href=\"http://localhost/webmaddie/\">Start Again</a></p>";
