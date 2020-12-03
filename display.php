@@ -496,7 +496,7 @@ if ($hasdoom){
 	$perish    = $doomcollection['perish'];
 
 echo "
-	<p>Your Roles:</p>
+	<p>Your Doomsigns:</p>
 	<input type=\"checkbox\" id=\"visions\" name=\"visions\" value=\"visions\""; if ($visions){echo "checked";} echo ">
 	<label for=\"visions\">visions</label><br>
 	<input type=\"checkbox\" id=\"infinite\" name=\"infinite\" value=\"infinite\""; if ($infinite){echo "checked";} echo ">
@@ -638,7 +638,7 @@ if (array_key_exists ( 'memories' , $decodechar)){
 }
 
 if ($hasmemories){
-	$memories =  decodechar['roles'];
+	$memories =  $decodechar['roles'];
 	
 	$monster  = $memories['monster'];
 	$traitor  = $memories['traitor'];  
@@ -667,7 +667,7 @@ if (array_key_exists ( 'futureSelfInfo' , $decodechar)){
 }
 
 if ($hasfuturelife){
-	$selfinfo =  decodechar['futureSelfInfo'];
+	$selfinfo =  $decodechar['futureSelfInfo'];
 
 	$lost  = $selfinfo['lost'];
 	$failed  = $selfinfo['failed'];  
@@ -698,7 +698,308 @@ echo "
 	<label for=\"innocent\">innocent</label><br>";
 }
 
-// Janus has so much going on too >.<
+// Janus sheet has so much going on too, passing most of it up until I can see about changes
+
+$hassecretid = false;
+if (array_key_exists ( 'maskLabel' , $decodechar)){
+	$hassecretid = true;
+	echo "<h2>You have a secret identity and lead a double life!</h2>";
+}
+
+if ($hassecretid){
+	echo "Your masks label is " . $decodechar['maskLabel'] . ".";
+}
+
+// Joined has no support for their extra currently
+
+
+
+
+// Legacy Stuff
+
+$haslegacy = false;
+if (array_key_exists ( 'legacy' , $decodechar)){
+	$haslegacy = true;
+	echo "<h2>You strive to uphold a heroic legacy!</h2>";
+}
+
+if ($haslegacy){
+	$legacyinfo = $decodechar['legacy'];
+	
+	$active  = $legacyinfo['active'];
+	$retired  = $legacyinfo['retired'];  
+	$possible    = $legacyinfo['possible'];
+	$opponent    = $legacyinfo['opponent'];
+
+echo "
+	<p>Your Legacy contains:</p>
+	<input type=\"text\" id=\"active\" name=\"active\" content=\""; echo $active; echo "\"> is still active and prominent in the city.<br>
+	<input type=\"text\" id=\"retired\" name=\"retired\" content=\""; echo $retired; echo "\"> is retired and quite judgmental.<br>
+	<input type=\"text\" id=\"possible\" name=\"possible\" content=\""; echo $possible; echo "\"> is the next possible member of your legacy.<br>
+	<input type=\"text\" id=\"opponent\" name=\"opponent\" content=\""; echo $opponent; echo "\"> is the greatest opponent your legacy ever faced...and is still at large.<br>";
+}
+
+
+// Newborn Lessons
+
+$haslessons = false;
+if (array_key_exists ( 'lessons' , $decodechar)){
+	$haslessons = true;
+	echo "<h2>You are learning lessons about heroes, and the world!</h2>";
+}
+
+if ($haslessons){
+	$lessoninfo = $decodechar['lessons'];
+	
+	$iam  = $lessoninfo['iam'];
+	$should  = $lessoninfo['should'];  
+	$always    = $lessoninfo['always'];
+	$never    = $lessoninfo['never'];
+
+echo "
+	<p>Your Lessons are:</p>
+	I am ...<input type=\"text\" id=\"iam\" name=\"iam\" content=\""; echo $iam; echo "\"><br>
+	A superhero should ...<input type=\"text\" id=\"should\" name=\"should\" content=\""; echo $should; echo "\"><br>
+	Always... <input type=\"text\" id=\"always\" name=\"always\" content=\""; echo $always; echo "\"><br>
+	Never ...<input type=\"text\" id=\"never\" name=\"never\" content=\""; echo $never; echo "\"><br>";
+}
+
+// Nomad is nice and simple
+$hasinfluenceGiven = false;
+if (array_key_exists ( 'influenceGiven' , $decodechar)){
+	$hasinfluenceGiven = true;
+	echo "<h2>You are trying to make connections, but reaching out to others is hard...</h2>";
+}
+
+if ($hasinfluenceGiven){
+	echo "<br>You have given out <input type=\"number\" id=\"infgiven\" name=\"infgiven\" min=\"0\" max=\"4\" value="; 
+	echo $decodechar['influenceGiven'];
+	echo "\">. You can only give out influence by revelaing a vulnerability.<br>";
+	
+	echo "Your influence currently grants you:<br>
+		❑
+1-2 Influence: When you defend someone who has Influence over you, you can ignore the Insecure condition.<br>
+When you directly engage someone who has Influence over you, you can ignore the Afraid condition.<br>
+3 Influence: When you take a powerful blow from someone with Influence over you, take -2 to the roll.<br>
+4 Influence: When you pierce the mask of someone who has Influence over you, you can always ask them one question, even on a miss.<br>
+5 Influence: When you spend a Team to help someone who has Influence over you, it gives them +2.<br><br>
+In future, you may gain: <br>
+6 Influence: When you accept the words of someone who has Influence over you, mark potential, clear a condition, or take +1 forward.<br>";
+}
+
+// Nothing in the Outsider JSON
+
+// Having a Mentor is hard, Proteges know all about it
+$hasmentor = false;
+if (array_key_exists ( 'mentor' , $decodechar)){
+	$hasmentor = true;
+	echo "<h2>You have a mentor, who is training you to be a hero</h2>";
+}
+
+if ($hasmentor){
+	$mendetails = $decodechar['mentor'];
+	echo 	"Your mentor embodies the label <input type=\"text\" id=\"embodies\" name=\"embodies\" content=\""; echo $mendetails['embodies']; echo "\">.<br>
+	Your mentor denies <input type=\"text\" id=\"denies\" name=\"denies\" content=\""; echo $mendetails['denies']; echo "\">.<br><br>
+	They have also provided you with a base of operations, which includes:<br>";
+	
+	$menresources = $mendetails['resources'];
+	
+	$base  = $sanfeatures['base'];
+	$vehicle  = $sanfeatures['vehicle'];  
+	$supercomputer    = $sanfeatures['supercomputer'];
+	$communicators    = $sanfeatures['communicators'];
+	$surveillance    = $sanfeatures['surveillance'];
+	$identities    = $sanfeatures['identities'];
+	$badges    = $sanfeatures['badges'];
+	$chem    = $sanfeatures['chem'];
+	$med    = $sanfeatures['med'];
+	$proteleportal   = $sanfeatures['teleportal'];
+	$weapon    = $sanfeatures['weapon'];
+	$security    = $sanfeatures['security'];
+	$robots    = $sanfeatures['robots'];
+
+echo "
+	<p>Your Base has the following features:</p>
+	<input type=\"checkbox\" id=\"base\" name=\"base\" value=\"base\""; if ($base){echo "checked";} echo ">
+	<label for=\"base\">base</label><br>
+	<input type=\"checkbox\" id=\"vehicle\" name=\"vehicle\" value=\"vehicle\""; if ($vehicle){echo "checked";} echo ">
+	<label for=\"vehicle\">vehicle</label><br>
+	<input type=\"checkbox\" id=\"supercomputer\" name=\"supercomputer\" value=\"supercomputer\""; if ($supercomputer){echo "checked";} echo ">
+	<label for=\"supercomputer\">supercomputer</label><br>
+	<input type=\"checkbox\" id=\"communicators\" name=\"communicators\" value=\"communicators\""; if ($communicators){echo "checked";} echo ">
+	<label for=\"communicators\">communicators</label><br>
+	<input type=\"checkbox\" id=\"surveillance\" name=\"surveillance\" value=\"surveillance\""; if ($surveillance){echo "checked";} echo ">
+	<label for=\"surveillance\">surveillance</label><br>
+	<input type=\"checkbox\" id=\"identities\" name=\"identities\" value=\"identities\""; if ($identities){echo "checked";} echo ">
+	<label for=\"identities\">identities</label><br>
+	<input type=\"checkbox\" id=\"badges\" name=\"badges\" value=\"badges\""; if ($badges){echo "checked";} echo ">
+	<label for=\"badges\">badges</label><br>
+	<input type=\"checkbox\" id=\"chem\" name=\"chem\" value=\"chem\""; if ($chem){echo "checked";} echo ">
+	<label for=\"chem\">chem</label><br>
+	<input type=\"checkbox\" id=\"med\" name=\"med\" value=\"med\""; if ($med){echo "checked";} echo ">
+	<label for=\"med\">med</label><br>
+	<input type=\"checkbox\" id=\"proteleportal\" name=\"proteleportal\" value=\"proteleportal\""; if ($proteleportal){echo "checked";} echo ">
+	<label for=\"proteleportal\">proteleportal</label><br>
+	<input type=\"checkbox\" id=\"weapon\" name=\"weapon\" value=\"weapon\""; if ($weapon){echo "checked";} echo ">
+	<label for=\"weapon\">weapon</label><br>
+	<input type=\"checkbox\" id=\"security\" name=\"security\" value=\"security\""; if ($security){echo "checked";} echo ">
+	<label for=\"security\">security</label><br>
+	<input type=\"checkbox\" id=\"robots\" name=\"robots\" value=\"robots\""; if ($robots){echo "checked";} echo ">
+	<label for=\"robots\">robots</label><br>";
+	
+}
+
+// Reformeds Friends in Low Places, obligations and favours
+$hasfilp = false;
+if (array_key_exists ( 'friends' , $decodechar)){
+	$hasfilp = true;
+	echo "<h2>You have ties to villains to whom you owe favours...</h2>";
+}
+
+if ($hasfilp){
+	$filp = $decodechar['friends'];
+	$friendcount = 0;
+	foreach ($filp as $lowfriend){
+		//print_r ($oneadvance); 
+		echo "
+		<p>Your 'friends' are:</p>
+		<input type=\"text\" id=\"friend" . $friendcount . "\" name=\"friend" . $friendcount . "\" content=\"" . $lowfriend['name'] . "\"> 
+		who specialises in <input type=\"text\" id=\"fspec" . $friendcount . "\" name=\"fspec" . $friendcount . "\" content=\"" . $lowfriend['speciality'] . "\"> 
+		and your obligation to them is <input type=\"foblig" . $friendcount . "\" id=\"foblig" . $friendcount . "\" name=\"foblig" . $friendcount . "\" min=\"0\" max=\"4\" value=\"" . $lowfriend['obligation'] . "\">.<br>";
+		$friendcount++;
+	}
+	
+}
+
+// Scions respect mechanics
+$hasrespect = false;
+if (array_key_exists ( 'enemy' , $decodechar)){ //I'm just checking for one, because each of the respect targets is its own base level entry, not collapsed in to a subsection
+	$hasrespect = true;
+	echo "<h2>You are working to earn respect from heroes, in defiance of your parent</h2>";
+}
+
+if ($hasrespect){
+	echo "<p>You are seeking the respect of:</p>";
+	
+	echo "Your parents greatest enemy: <input type=\"text\" id=\"genemy\" name=\"genemy\" content=\"" . ($decodechar['enemy'])['name'] . "\"> 
+	whose respect you have earned <input type=\"genemyrespect\" id=\"genemyrespect\" name=\"genemyrespect\" min=\"0\" max=\"4\" value=\"" . ($decodechar['enemy'])['respect'] . "\"><br>
+	<input type=\"checkbox\" id=\"genemyadvance\" name=\"genemyadvance\" value=\"genemyadvance\""; if (($decodechar['enemy'])['advancement']){echo "checked";} echo ">
+	<label for=\"genemyadvance\">Advancement Earned</label><br>";
+	
+	echo "The citys greatest leader: <input type=\"text\" id=\"gleader\" name=\"gleader\" content=\"" . ($decodechar['leader'])['name'] . "\"> 
+	whose respect you have earned <input type=\"gleaderrespect\" id=\"gleaderrespect\" name=\"gleaderrespect\" min=\"0\" max=\"4\" value=\"" . ($decodechar['leader'])['respect'] . "\"><br>
+	<input type=\"checkbox\" id=\"gleaderadvance\" name=\"gleaderadvance\" value=\"gleaderadvance\""; if (($decodechar['leader'])['advancement']){echo "checked";} echo ">
+	<label for=\"gleaderadvance\">Advancement Earned</label><br>";
+	
+	echo "Your parents greatest victim: <input type=\"text\" id=\"gvictim\" name=\"gvictim\" content=\"" . ($decodechar['victim'])['name'] . "\"> 
+	whose respect you have earned <input type=\"gvictimrespect\" id=\"gvictimrespect\" name=\"gvictimrespect\" min=\"0\" max=\"4\" value=\"" . ($decodechar['victim'])['respect'] . "\"><br>
+	<input type=\"checkbox\" id=\"gvictimadvance\" name=\"gvictimadvance\" value=\"gvictimadvance\""; if (($decodechar['victim'])['advancement']){echo "checked";} echo ">
+	<label for=\"gvictimadvance\">Advancement Earned</label><br>";
+	
+	echo "The city's greatest hero: <input type=\"text\" id=\"ghero\" name=\"ghero\" content=\"" . ($decodechar['hero'])['name'] . "\"> 
+	whose respect you have earned <input type=\"gherorespect\" id=\"gherorespect\" name=\"gherorespect\" min=\"0\" max=\"4\" value=\"" . ($decodechar['hero'])['respect'] . "\"><br>
+	<input type=\"checkbox\" id=\"gheroadvance\" name=\"gheroadvance\" value=\"gheroadvance\""; if (($decodechar['hero'])['advancement']){echo "checked";} echo ">
+	<label for=\"gheroadvance\">Advancement Earned</label><br>";
+	
+	echo "Your personal idol: <input type=\"text\" id=\"pidol\" name=\"pidol\" content=\"" . ($decodechar['idol'])['name'] . "\"> 
+	whose respect you have earned <input type=\"pidolrespect\" id=\"pidolrespect\" name=\"pidolrespect\" min=\"0\" max=\"4\" value=\"" . ($decodechar['idol'])['respect'] . "\"><br>
+	<input type=\"checkbox\" id=\"pidoladvance\" name=\"pidoladvance\" value=\"pidoladvance\""; if (($decodechar['idol'])['advancement']){echo "checked";} echo ">
+	<label for=\"pidoladvance\">Advancement Earned</label><br>";
+	
+	echo "The city's biggest celebrity: <input type=\"text\" id=\"bceleb\" name=\"bceleb\" content=\"" . ($decodechar['celebrity'])['name'] . "\"> 
+	whose respect you have earned <input type=\"bcelebrespect\" id=\"bcelebrespect\" name=\"bcelebrespect\" min=\"0\" max=\"4\" value=\"" . ($decodechar['celebrity'])['respect'] . "\"><br>
+	<input type=\"checkbox\" id=\"bcelebadvance\" name=\"bcelebadvance\" value=\"bcelebadvance\""; if (($decodechar['celebrity'])['advancement']){echo "checked";} echo ">
+	<label for=\"bcelebadvance\">Advancement Earned</label><br>";
+}
+
+// Star's audience!
+$hasaudience = false;
+if (array_key_exists ( 'audience' , $decodechar)){
+	$hasaudience = true;
+	echo "<h2>You have an audience following you, and you need to keep them happy!</h2>";
+}
+
+if ($hasaudience){
+	$audience =  ($decodechar['audience'])['loves'];
+
+	$alike  = $audience['alike'];
+	$dangerous  = $audience['dangerous'];  
+	$noble    = $audience['noble'];
+	$beautiful    = $audience['beautiful'];
+	$charming    = $audience['charming'];
+	$firebrand  = $audience['firebrand'];
+
+
+echo "
+	<p>Your Audience loves you because:</p>
+	<input type=\"checkbox\" id=\"alike\" name=\"alike\" value=\"alike\""; if ($alike){echo "checked";} echo ">
+	<label for=\"alike\">You are just like them</label><br>
+	<input type=\"checkbox\" id=\"dangerous\" name=\"dangerous\" value=\"dangerous\""; if ($dangerous){echo "checked";} echo ">
+	<label for=\"dangerous\">You’re a dangerous person, a bad seed</label><br>
+	<input type=\"checkbox\" id=\"noble\" name=\"noble\" value=\"noble\""; if ($noble){echo "checked";} echo ">
+	<label for=\"noble\">You’re noble warrior for justice </label><br>
+	<input type=\"checkbox\" id=\"beautiful\" name=\"beautiful\" value=\"beautiful\""; if ($beautiful){echo "checked";} echo ">
+	<label for=\"beautiful\">You’re stunning, unique, and beautiful</label><br>
+	<input type=\"checkbox\" id=\"charming\" name=\"charming\" value=\"charming\"\""; if ($charming){echo "checked";} echo ">
+	<label for=\"charming\">You’re charming, well-spoken, and smart </label><br>
+	<input type=\"checkbox\" id=\"firebrand\" name=\"firebrand\" value=\"firebrand\""; if ($firebrand){echo "checked";} echo ">
+	<label for=\"firebrand\">You’re a firebrand, a rabble rouser</label><br>";	
+	
+	// audience advantages
+	
+	$audienceadv =  ($decodechar['audience'])['advantages'];
+
+	$devoted  = $audienceadv['devoted'];
+	$speak  = $audienceadv['speak'];  
+	$agent    = $audienceadv['agent'];
+	$money    = $audienceadv['money'];
+	$endorsement    = $audienceadv['endorsement'];
+	$wider  = $audienceadv['wider'];
+
+
+echo "
+	<p>Your Audience has some advantages:</p>
+	<input type=\"checkbox\" id=\"devoted\" name=\"devoted\" value=\"devoted\""; if ($devoted){echo "checked";} echo ">
+	<label for=\"devoted\">Your audience is utterly devoted to you</label><br>
+	<input type=\"checkbox\" id=\"speak\" name=\"speak\" value=\"speak\""; if ($speak){echo "checked";} echo ">
+	<label for=\"speak\">You can easily speak to them at any time</label><br>
+	<input type=\"checkbox\" id=\"agent\" name=\"agent\" value=\"agent\""; if ($agent){echo "checked";} echo ">
+	<label for=\"agent\">You have a PR agent to handle your audience</label><br>
+	<input type=\"checkbox\" id=\"money\" name=\"money\" value=\"money\""; if ($money){echo "checked";} echo ">
+	<label for=\"money\">You earn a lot of money from their interest</label><br>
+	<input type=\"checkbox\" id=\"endorsement\" name=\"endorsement\" value=\"endorsement\"\""; if ($endorsement){echo "checked";} echo ">
+	<label for=\"endorsement\">You have a major hero’s endorsement</label><br>
+	<input type=\"checkbox\" id=\"wider\" name=\"wider\" value=\"wider\""; if ($wider){echo "checked";} echo ">
+	<label for=\"wider\">You have a much wider audience</label><br>";		
+	
+	// audience demands
+	
+	$audiencedem =  ($decodechar['audience'])['demands'];
+
+	$stimulation  = $audiencedem['stimulation'];
+	$perfection  = $audiencedem['perfection'];  
+	$drama    = $audiencedem['drama'];
+	$heroism    = $audiencedem['heroism'];
+	$novelty    = $audiencedem['novelty'];
+	$chemistry  = $audiencedem['chemistry'];
+
+
+echo "
+	<p>Your Audience has some advantages:</p>
+	<input type=\"checkbox\" id=\"stimulation\" name=\"stimulation\" value=\"stimulation\""; if ($stimulation){echo "checked";} echo ">
+	<label for=\"stimulation\">They require constant stimulation</label><br>
+	<input type=\"checkbox\" id=\"perfection\" name=\"perfection\" value=\"perfection\""; if ($perfection){echo "checked";} echo ">
+	<label for=\"perfection\">They require perfection—no mistakes</label><br>
+	<input type=\"checkbox\" id=\"drama\" name=\"drama\" value=\"drama\""; if ($drama){echo "checked";} echo ">
+	<label for=\"drama\">They require frequent bouts of drama</label><br>
+	<input type=\"checkbox\" id=\"heroism\" name=\"heroism\" value=\"heroism\""; if ($heroism){echo "checked";} echo ">
+	<label for=\"heroism\">They require major acts of heroism</label><br>
+	<input type=\"checkbox\" id=\"novelty\" name=\"novelty\" value=\"novelty\"\""; if ($novelty){echo "checked";} echo ">
+	<label for=\"novelty\">They require novelty and brand new action</label><br>
+	<input type=\"checkbox\" id=\"chemistry\" name=\"chemistry\" value=\"chemistry\""; if ($chemistry){echo "checked";} echo ">
+	<label for=\"chemistry\">They require chemistry with your allies</label><br>";	
+	
+}
 
 echo "</form>";
 echo "<a href=\"http://localhost/webmaddie/\">Start Again</a></p>";
