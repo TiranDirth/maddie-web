@@ -1,0 +1,106 @@
+{
+  "characterName": "",
+  "playerName": "",
+  "playbook": "outsider",
+  "labels": {
+    "freak": {
+      "value": 1,
+      "locked": false
+    },
+    "danger": {
+      "value": -1,
+      "locked": false
+    },
+    "savior": {
+      "value": 0,
+      "locked": false
+    },
+    "superior": {
+      "value": 2,
+      "locked": false
+    },
+    "mundane": {
+      "value": 0,
+      "locked": false
+    }
+  },
+  "potential": 0,
+  "pendingAdvancements": 0,
+  "conditions": {
+    "afraid": false,
+    "angry": false,
+    "guilty": false,
+    "hopeless": false,
+    "insecure": false
+  },
+  "moves": [
+    { "id": 46, "picked": false },
+    { "id": 47, "picked": false },
+    { "id": 48, "picked": false },
+    { "id": 49, "picked": false },
+    { "id": 50, "picked": false },
+    { "id": 51, "picked": false }
+  ],
+  "advancement": {
+    "basic": {
+      "otherPlaybookMove1": {
+        "description": "moveYouPlaybook",
+        "taken": false
+      },
+      "otherPlaybookMove2": {
+        "description": "moveYouPlaybook",
+        "taken": false
+      },
+      "yourPlaybookMove1": {
+        "description": "moveOtherPlaybook",
+        "taken": false
+      },
+      "deleteInfluence": {
+        "description": "loseInfluence",
+        "taken": false
+      },
+      "rearrange": {
+        "description": "rearrange",
+        "taken": false
+      },
+      "momentOfTruth": {
+        "description": "mot",
+        "taken": false
+      },
+      "abilities": {
+        "description": "abilities",
+        "taken": false
+      },
+      "identity": {
+        "description": "identity",
+        "taken": false
+      }
+    },
+    "advanced": {
+      "momentOfTruth": {
+        "description": "motAgain",
+        "taken": false
+      },
+      "playbookChange": {
+        "description": "playbookChange",
+        "taken": false
+      },
+      "adultMove1": {
+        "description": "adult",
+        "taken": false
+      },
+      "adultMove2": {
+        "description": "adult",
+        "taken": false
+      },
+      "blockLabel": {
+        "description": "lock",
+        "taken": false
+      },
+      "retire": {
+        "description": "retire",
+        "taken": false
+      }
+    }
+  }
+}

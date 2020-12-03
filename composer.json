@@ -1,0 +1,6 @@
+{
+    "require": {
+		"aws/aws-sdk-php": "2.*",
+        "wohali/oauth2-discord-new": "^1.1"
+    }
+}

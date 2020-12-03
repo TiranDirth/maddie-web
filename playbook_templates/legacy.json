@@ -1,0 +1,113 @@
+{
+  "characterName": "",
+  "playerName": "",
+  "playbook": "legacy",
+  "labels": {
+    "freak": {
+      "value": 0,
+      "locked": false
+    },
+    "danger": {
+      "value": -1,
+      "locked": false
+    },
+    "savior": {
+      "value": 2,
+      "locked": false
+    },
+    "superior": {
+      "value": 0,
+      "locked": false
+    },
+    "mundane": {
+      "value": 1,
+      "locked": false
+    }
+  },
+  "potential": 0,
+  "pendingAdvancements": 0,
+  "conditions": {
+    "afraid": false,
+    "angry": false,
+    "guilty": false,
+    "hopeless": false,
+    "insecure": false
+  },
+  "moves": [
+    { "id": 40, "picked": true },
+    { "id": 41, "picked": false },
+    { "id": 42, "picked": false },
+    { "id": 43, "picked": false },
+    { "id": 44, "picked": false },
+    { "id": 45, "picked": false },
+    { "id": 66, "picked": true }
+  ],
+  "advancement": {
+    "basic": {
+      "otherPlaybookMove1": {
+        "description": "moveYouPlaybook",
+        "taken": false
+      },
+      "otherPlaybookMove2": {
+        "description": "moveYouPlaybook",
+        "taken": false
+      },
+      "yourPlaybookMove1": {
+        "description": "moveOtherPlaybook",
+        "taken": false
+      },
+      "deleteInfluence": {
+        "description": "loseInfluence",
+        "taken": false
+      },
+      "rearrange": {
+        "description": "rearrange",
+        "taken": false
+      },
+      "momentOfTruth": {
+        "description": "mot",
+        "taken": false
+      },
+      "sanctuary": {
+        "description": "sanctuary",
+        "taken": false
+      },
+      "powers": {
+        "description": "powers",
+        "taken": false
+      }
+    },
+    "advanced": {
+      "momentOfTruth": {
+        "description": "motAgain",
+        "taken": false
+      },
+      "playbookChange": {
+        "description": "playbookChange",
+        "taken": false
+      },
+      "adultMove1": {
+        "description": "adult",
+        "taken": false
+      },
+      "adultMove2": {
+        "description": "adult",
+        "taken": false
+      },
+      "blockLabel": {
+        "description": "lock",
+        "taken": false
+      },
+      "retire": {
+        "description": "retire",
+        "taken": false
+      }
+    }
+  },
+  "legacy": {
+    "active": "",
+    "retired": "",
+    "possible": "",
+    "opponent": ""
+  }
+}

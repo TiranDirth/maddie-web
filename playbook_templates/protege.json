@@ -1,0 +1,125 @@
+{
+  "characterName": "",
+  "playerName": "",
+  "playbook": "protege",
+  "labels": {
+    "freak": {
+      "value": 0,
+      "locked": false
+    },
+    "danger": {
+      "value": -1,
+      "locked": false
+    },
+    "savior": {
+      "value": 1,
+      "locked": false
+    },
+    "superior": {
+      "value": 2,
+      "locked": false
+    },
+    "mundane": {
+      "value": 0,
+      "locked": false
+    }
+  },
+  "potential": 0,
+  "pendingAdvancements": 0,
+  "conditions": {
+    "afraid": false,
+    "angry": false,
+    "guilty": false,
+    "hopeless": false,
+    "insecure": false
+  },
+  "moves": [
+    { "id": 52, "picked": false },
+    { "id": 53, "picked": false },
+    { "id": 54, "picked": false },
+    { "id": 55, "picked": false },
+    { "id": 56, "picked": false },
+    { "id": 57, "picked": false }
+  ],
+  "advancement": {
+    "basic": {
+      "otherPlaybookMove1": {
+        "description": "moveYouPlaybook",
+        "taken": false
+      },
+      "otherPlaybookMove2": {
+        "description": "moveYouPlaybook",
+        "taken": false
+      },
+      "yourPlaybookMove1": {
+        "description": "moveOtherPlaybook",
+        "taken": false
+      },
+      "deleteInfluence": {
+        "description": "loseInfluence",
+        "taken": false
+      },
+      "rearrange": {
+        "description": "rearrange",
+        "taken": false
+      },
+      "momentOfTruth": {
+        "description": "mot",
+        "taken": false
+      },
+      "mentorLabel": {
+        "description": "mentorLabel",
+        "taken": false
+      },
+      "resources": {
+        "description": "resources",
+        "taken": false
+      }
+    },
+    "advanced": {
+      "momentOfTruth": {
+        "description": "motAgain",
+        "taken": false
+      },
+      "playbookChange": {
+        "description": "playbookChange",
+        "taken": false
+      },
+      "adultMove1": {
+        "description": "adult",
+        "taken": false
+      },
+      "adultMove2": {
+        "description": "adult",
+        "taken": false
+      },
+      "blockLabel": {
+        "description": "lock",
+        "taken": false
+      },
+      "retire": {
+        "description": "retire",
+        "taken": false
+      }
+    }
+  },
+  "mentor": {
+    "embodies": "",
+    "denies": "",
+    "resources": {
+      "base": false,
+      "vehicle": false,
+      "supercomputer": false,
+      "communicators": false,
+      "surveillance": false,
+      "identities": false,
+      "badges": false,
+      "chem": false,
+      "med": false,
+      "teleportal": false,
+      "weapon": false,
+      "security": false,
+      "robots": false
+    }
+  }
+}

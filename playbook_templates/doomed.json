@@ -1,0 +1,148 @@
+{
+  "characterName": "",
+  "playerName": "",
+  "playbook": "doomed",
+  "labels": {
+    "freak": {
+      "value": 1,
+      "locked": false
+    },
+    "danger": {
+      "value": 1,
+      "locked": false
+    },
+    "savior": {
+      "value": 1,
+      "locked": false
+    },
+    "superior": {
+      "value": -1,
+      "locked": false
+    },
+    "mundane": {
+      "value": 0,
+      "locked": false
+    }
+  },
+  "potential": 0,
+  "pendingAdvancements": 0,
+  "conditions": {
+    "afraid": false,
+    "angry": false,
+    "guilty": false,
+    "hopeless": false,
+    "insecure": false
+  },
+  "moves": [{ "id": 67, "taken": true }],
+  "advancement": {
+    "basic": {
+      "otherPlaybookMove1": {
+        "description": "moveYouPlaybook",
+        "taken": false
+      },
+      "otherPlaybookMove2": {
+        "description": "moveYouPlaybook",
+        "taken": false
+      },
+      "otherPlaybookMove3": {
+        "description": "moveYouPlaybook",
+        "taken": false
+      },
+      "deleteInfluence": {
+        "description": "loseInfluence",
+        "taken": false
+      },
+      "rearrange": {
+        "description": "rearrange",
+        "taken": false
+      },
+      "momentOfTruth": {
+        "description": "mot",
+        "taken": false
+      },
+      "clear": {
+        "description": "mot",
+        "taken": false
+      },
+      "burn": {
+        "description": "plusOne",
+        "taken": false
+      }
+    },
+    "advanced": {
+      "momentOfTruth": {
+        "description": "motAgain",
+        "taken": false
+      },
+      "confront": {
+        "description": "confront",
+        "taken": false
+      },
+      "adultMove1": {
+        "description": "adult",
+        "taken": false
+      },
+      "adultMove2": {
+        "description": "adult",
+        "taken": false
+      },
+      "blockLabel": {
+        "description": "lock",
+        "taken": false
+      },
+      "paragon": {
+        "description": "paragon",
+        "taken": false
+      }
+    }
+  },
+  "doomBringers": {
+    "overexterting": false,
+    "innocents": false,
+    "alone": false,
+    "loved": false,
+    "mercy": false,
+    "openly": false
+  },
+  "doomTrack": 0,
+  "doomsigns": {
+    "visions": false,
+    "infinite": false,
+    "portal": false,
+    "bright": false,
+    "bolstered": false,
+    "perish": false
+  },
+  "sanctuary": {
+    "features": {
+      "assistant": false,
+      "traps": false,
+      "tomes": false,
+      "relics": false,
+      "teleportal": false,
+      "containment": false,
+      "computer": false,
+      "tools": false,
+      "meditation": false,
+      "battery": false,
+      "enhancement": false,
+      "healing": false,
+      "art": false
+    },
+    "downsides": {
+      "access": false,
+      "attention": false,
+      "location": false,
+      "damaged": false,
+      "tied": false
+    },
+    "conditions": [
+      "first",
+      "help",
+      "danger",
+      "lesser",
+      "doom",
+      "obtain"
+    ]
+  }
+}

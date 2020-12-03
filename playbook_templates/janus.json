@@ -1,0 +1,143 @@
+{
+  "characterName": "",
+  "playerName": "",
+  "playbook": "janus",
+  "labels": {
+    "freak": {
+      "value": -1,
+      "locked": false
+    },
+    "danger": {
+      "value": 0,
+      "locked": false
+    },
+    "savior": {
+      "value": 0,
+      "locked": false
+    },
+    "superior": {
+      "value": 0,
+      "locked": false
+    },
+    "mundane": {
+      "value": 3,
+      "locked": false
+    }
+  },
+  "potential": 0,
+  "pendingAdvancements": 0,
+  "conditions": {
+    "afraid": false,
+    "angry": false,
+    "guilty": false,
+    "hopeless": false,
+    "insecure": false
+  },
+  "moves": [
+    { "id": 34, "picked": true },
+    { "id": 35, "picked": false },
+    { "id": 36, "picked": false },
+    { "id": 37, "picked": false },
+    { "id": 38, "picked": false },
+    { "id": 39, "picked": false },
+    { "id": 65, "picked": true }
+  ],
+  "advancement": {
+    "basic": {
+      "otherPlaybookMove1": {
+        "description": "moveYouPlaybook",
+        "taken": false
+      },
+      "otherPlaybookMove2": {
+        "description": "moveYouPlaybook",
+        "taken": false
+      },
+      "yourPlaybookMove1": {
+        "description": "moveOtherPlaybook",
+        "taken": false
+      },
+      "yourPlaybookMove2": {
+        "description": "moveOtherPlaybook",
+        "taken": false
+      },
+      "deleteInfluence": {
+        "description": "loseInfluence",
+        "taken": false
+      },
+      "maskLabel": {
+        "description": "maskLabel",
+        "taken": false
+      },
+      "momentOfTruth": {
+        "description": "mot",
+        "taken": false
+      },
+      "drives": {
+        "description": "drives",
+        "taken": false
+      }
+    },
+    "advanced": {
+      "momentOfTruth": {
+        "description": "motAgain",
+        "taken": false
+      },
+      "playbookChange": {
+        "description": "playbookChange",
+        "taken": false
+      },
+      "adultMove1": {
+        "description": "adult",
+        "taken": false
+      },
+      "adultMove2": {
+        "description": "adult",
+        "taken": false
+      },
+      "blockLabel": {
+        "description": "lock",
+        "taken": false
+      },
+      "retire": {
+        "description": "retire",
+        "taken": false
+      }
+    }
+  },
+  "maskLabel": "",
+  "secretIdentity": {
+    "jobs": {
+      "barista": false,
+      "intern": false,
+      "host": false,
+      "sales": false,
+      "delivery": false,
+      "fastfood": false,
+      "babysitter": false,
+      "dishwasher": false,
+      "tech": false,
+      "waiter": false
+    },
+    "school": {
+      "schoolwork": false,
+      "athletic": false,
+      "chess": false,
+      "photography": false,
+      "government": false
+    },
+    "home": {
+      "caring": false,
+      "chores": false,
+      "bills": false,
+      "parenting": false
+    },
+    "social": {
+      "significant": false,
+      "friend": false,
+      "popularity": false,
+      "relative": false,
+      "teacher": false
+    }
+  }
+
+}
