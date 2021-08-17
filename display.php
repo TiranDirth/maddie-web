@@ -69,8 +69,13 @@ echo "<h1>Showing a sheet for " . $cname . " otherwise known as REALNAMEGOESHERE
 	}
 	
 	
-	//build the character form
-echo "<form>
+	//build the character form - NB: We do not store a characters real name yet, I think we should
+echo "<form action=\"./store.php\" method=\"post\">
+	<input type=\"hidden\" id=\"charkey\" name=\"charkey\" value=\"" . $_POST["charkey"] . "\">
+	<input type=\"hidden\" id=\"maskname\" name=\"maskname\" value=\"" . $cname . "\">
+	<input type=\"hidden\" id=\"realname\" name=\"realname\" value=\"" . "REALNAMEGOESHERE" . "\">
+	<input type=\"hidden\" id=\"playername\" name=\"playername\" value=\"" . $decodechar['playerName'] . "\">
+	<input type=\"hidden\" id=\"playbook\" name=\"playbook\" value=\"" . $cplaybook . "\">
 	<div class=\"pleft\">Moment of Truth</div>
 	<textarea name=\"mot\" rows=\"10\" cols=\"50\">" . $selectedPlaybook['mot'] . "</textarea><br>
 	<div class=\"pleft\"><p>Triumph</p></div>
@@ -85,7 +90,7 @@ echo "<form>
 	<th><p>Superior</p></th>
     <th><p>Mundane</p></th>";
 	if ($cplaybook == 'soldier'){
-		echo "<th>Extra</th>";
+		echo "<th><p>Extra</p></th>";
 	}
 	echo "
 	</tr>
@@ -248,7 +253,7 @@ foreach ($decodechar['moves'] as $amove) {
 			}
 		}
 		if (!$selectedmove) {
-			// Handle not finding what you were after
+			// Handle not finding what we were after
 		}
 			
 		
@@ -714,7 +719,6 @@ if ($hassecretid){
 
 
 
-
 // Legacy Stuff
 
 $haslegacy = false;
@@ -985,7 +989,7 @@ echo "
 
 
 echo "
-	<p>Your Audience has some advantages:</p>
+	<p>Your Audience maskes some demands:</p>
 	<input type=\"checkbox\" id=\"stimulation\" name=\"stimulation\" value=\"stimulation\""; if ($stimulation){echo "checked";} echo ">
 	<label for=\"stimulation\">They require constant stimulation</label><br>
 	<input type=\"checkbox\" id=\"perfection\" name=\"perfection\" value=\"perfection\""; if ($perfection){echo "checked";} echo ">
@@ -1027,5 +1031,6 @@ echo "<h2>Additional background information</h2>
 	<div class=\"pleft\">Abilities</div>
 	<textarea name=\"charabilities\" rows=\"3\" cols=\"50\">" . "Information on your powers goes here, it may be drawn from your playbook or made up." . "</textarea><br>";
 
-echo "</form>";
-echo "<a href=\"http://localhost/webmaddie/\">Start Again</a></p>";
+echo "<input type=\"submit\">
+	</form>";
+echo "<a href=\"./\">Start Again</a></p>";
